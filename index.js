@@ -15,8 +15,8 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-
-app.set('port', process.env.PORT || 3000);
+app.set('port', (process.env.PORT || 5000));
+// app.set('port', process.env.PORT || 3000);
 
 const flash = require('express-flash');
 const session = require('express-session');
@@ -40,10 +40,10 @@ app.get('/', function(req, res) {
 
  // app.get('/home', waiterRoute.index);
  // app.get('/names', waiterRoute.index);
- app.post('/', waiterRoute.waiter);
  app.get('/days', waiterRoute.days);
+ app.post('/', waiterRoute.waiter);
 
-const port = process.env.PORT || 3000;
-app.listen(port, function() {
-  console.log('App running on ' + 'http://localhost:' + port);
-})
+ var port = process.env.PORT || 5000;
+ app.listen(port, function() {
+   console.log('App runnig on ' + 'http://localhost:' + port);
+ })
