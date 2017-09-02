@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1><kbd>WAITER WEB APPLICATION</kbd></h1>
+  <form id="container" action="/" method="post">
+    <input type="text" name="name" placeholder="Type your name here...">
+    <input type="submit" name="waiterName" value="Submit">
+  </form>
+</body>
+</html>
+
+{{#if message.error}}
+<div class="error">
+  {{error}}
+</div>
+{{/if}}
+<br>
+</br>
+
+{{#if message.success}}
+<div class="success">
+  {{success}}
+</div>
+{{/if}}
+
+<div class="">
+  {{message}}
+</div>
+
+{{#each person}}
+{{this.waiterName}}
+{{/each}}

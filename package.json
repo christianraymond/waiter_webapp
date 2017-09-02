@@ -1,0 +1,21 @@
+{
+  "name": "waiterapp",
+  "version": "1.0.0",
+  "description": "Creating a water webapplication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ChrisNgu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "flash": "^1.1.0",
+    "mongoose": "^4.11.9",
+    "session": "^0.1.0"
+  }
+}
