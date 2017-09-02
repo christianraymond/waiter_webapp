@@ -17,17 +17,14 @@ module.exports = function(models) {
 
   function waiter(req, res, next) {
     const name = req.body.name.toUpperCase();
-    console.log(name);
-    // console.log('fffff');
-
+    // console.log(name);
     models.findOne({
       waiterName: name
     }, function(err, WaiterName) {
       if (err) {
         return next(err);
-      } else if (WaiterName) {
-        // console.log(WaiterName);
-        message = 'Welcome back ' + WaiterName.waiterName;
+      } else if (WaiterName){
+        message = 'Hello ' + WaiterName.waiterName + ', Select your prefered working days bellow!';
         res.redirect('/days');
       } else {
         models.create({
@@ -41,8 +38,7 @@ module.exports = function(models) {
             }
             message = null;
           } else {
-            console.log('ggggg');
-            // res.flash('success', 'Hello, Select your prefered working days!')
+            res.flash('success', 'Hello, Select your prefered working days!')
             res.redirect('/days');
           }
         });

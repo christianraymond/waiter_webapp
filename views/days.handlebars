@@ -5,7 +5,27 @@
 
   <body>
     <output><kbd>
-      {{message}}
+      {{#if message.error}}
+      <div class="error">
+        {{error}}
+      </div>
+      {{/if}}
+      <br>
+      </br>
+
+      {{#if message.success}}
+      <div class="success">
+        {{success}}
+      </div>
+      {{/if}}
+
+      <div class="message">
+        {{message}}
+      </div>
+
+      {{#each person}}
+      {{this.WaiterName}}
+      {{/each}}
     </output></kbd>
     <form class="days" action="/days/{{shift.username}}">
       <input type="checkbox" name="day" value="Monday" {{#if shift.Monday}} checked {{/if}}> Monday
@@ -15,29 +35,8 @@
       <input type="checkbox" name="day" value="Friday" {{#if shift.Friday}} checked {{/if}}> Friday
       <input type="checkbox" name="day" value="Saturday" {{#if shift.Saturday}} checked {{/if}}> Saturday
       <input type="checkbox" name="day" value="Sunday" {{#if shift.Sunday}} checked {{/if}}> Sunday
-      <br><input type="submit" name="submit" value="Select" required>
+      <br><input type="submit" name="submit" value="Submit" required>
     </form>
   </body>
+
   </html>
-
-  {{#if message.error}}
-  <div class="error">
-    {{error}}
-  </div>
-  {{/if}}
-  <br>
-  </br>
-
-  {{#if message.success}}
-  <div class="success">
-    {{success}}
-  </div>
-  {{/if}}
-
-  <div class="">
-    {{message}}
-  </div>
-
-  {{#each person}}
-  {{this.waiterName}}
-  {{/each}}
