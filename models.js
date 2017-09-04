@@ -11,7 +11,7 @@ mongoose.connect(mongoURL, {
   }
 });
 const WaiterName = mongoose.model('WaiterName', {
-  waiterName: String
+  name : String
 });
 
 module.exports = WaiterName;

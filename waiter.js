@@ -7,7 +7,7 @@ module.exports = function(models) {
       if (err) {
         return next(err)
       } else {
-        res.render('home', {
+        res.render('waitersdays', {
           person: waiters,
           message: message
         });
@@ -15,44 +15,43 @@ module.exports = function(models) {
     });
   }
 
-  function waiter(req, res, next) {
-    const name = req.body.name.toUpperCase();
-    // console.log(name);
+  // function processWaiterShift = function(req, res, next){
+  // models.create({
+  //   waiterName: waiterName
+  // }, function(err, result) {
+  //   if (err) {
+  //     if (err.code == 11000) {
+  //       res.flash('error',
+  //         'Name already existed!')
+  //       return next(err)
+  //     }
+  //     message = null;
+  //     req.flash('success', 'Name added!')
+  //     res.render('home');
+  //   }
+  // });
+
+  function showWaiter(req, res, next) {
+    const waiterName = req.params.username.toUpperCase();
+    // console.log(waiterName);
     models.findOne({
-      waiterName: name
-    }, function(err, WaiterName) {
+      name: waiterName
+    }, function(err, waiter) {
       if (err) {
         return next(err);
-      } else if (WaiterName){
-        message = 'Hello ' + WaiterName.waiterName + ', Select your prefered working days bellow!';
-        res.redirect('/days');
       } else {
-        models.create({
-          waiterName: name
-        }, function(err, result) {
-          if (err) {
-            if (err.code == 11000) {
-              res.flash('error',
-                'Name already existed!')
-              return next(err)
-            }
-            message = null;
-          } else {
-            res.flash('success', 'Hello, Select your prefered working days!')
-            res.redirect('/days');
-          }
-        });
+        req.flash("success", 'Hello ' + waiterName + ', Select your prefered working days below!');
+        // return res.redirect('/waiters/' + waiterName);
+        // display empty form for user to enter...
+         res.render('waitersdays');
       }
+
     });
   }
 
-  function days(req, res, next) {
-    res.render('days', {message: message});
-  }
 
   return {
     index,
-    waiter,
-    days
+    showWaiter,
   }
 };

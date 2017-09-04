@@ -24,6 +24,10 @@ output{
 	margin: 40px;
 }
 
+.about{
+	color: white;
+}
+
 .message {
 color: white;
 font-size: 1pc
