@@ -1,6 +1,5 @@
 // const mongoose = require('mongoose');
 module.exports = function(models) {
-  var message = null;
 
   function index(req, res, next) {
     models.find({}, function(err, waiters) {
@@ -9,47 +8,44 @@ module.exports = function(models) {
       } else {
         res.render('waitersdays', {
           person: waiters,
-          message: message
         });
       }
     });
   }
 
-  // function processWaiterShift = function(req, res, next){
-  // models.create({
-  //   waiterName: waiterName
-  // }, function(err, result) {
-  //   if (err) {
-  //     if (err.code == 11000) {
-  //       res.flash('error',
-  //         'Name already existed!')
-  //       return next(err)
-  //     }
-  //     message = null;
-  //     req.flash('success', 'Name added!')
-  //     res.render('home');
-  //   }
-  // });
-
   function showWaiter(req, res, next) {
     const waiterName = req.params.username.toUpperCase();
-    // console.log(waiterName);
     models.findOne({
       name: waiterName
     }, function(err, waiter) {
       if (err) {
+        // if theres an error return next error
         return next(err);
+      } else if (waiter) {
+        req.flash('error', 'Waiter Name already existed!')
+        res.render('waitersdays', {waiter});
       } else {
-        req.flash("success", 'Hello ' + waiterName + ', Select your prefered working days below!');
-        // return res.redirect('/waiters/' + waiterName);
-        // display empty form for user to enter...
-         res.render('waitersdays');
-      }
-
+        // if it does not exist
+        // go create it
+        models.create({
+          name: waiterName
+        }, function(err, waiter) {
+          if (err) {
+            // if theres an error saving the waiter
+            // return next error
+            return next(err)
+          } else {
+            // else if  theres no error with creation of the names
+            // do flash success
+            // render waites days page
+            req.flash("success", 'Name successfully added');
+            res.render('waitersdays', {waiter});
+          }
+        });
+      };
     });
+
   }
-
-
   return {
     index,
     showWaiter,

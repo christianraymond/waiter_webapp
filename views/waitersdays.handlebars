@@ -7,7 +7,7 @@
     <output><kbd>
       {{#if message.error}}
       <div class="error">
-        {{error}}
+        {{message.rror}}
       </div>
       {{/if}}
       <br>
@@ -19,11 +19,8 @@
       </div>
       {{/if}}
 
-      {{#each person}}
-        {{this.name}}
-      {{/each}}
+      <p>Hello, {{waiter.name}}, select your prefered working days below.</p>
     </output></kbd>
-
     <form class="days" action="/waiters/{{username}}" method="get">
       <input type="checkbox" name="day" value="Monday" {{#if shift.Monday}} checked {{/if}}> Monday
       <input type="checkbox" name="day" value="Tuesday" {{#if shift.Tuesday}} checked {{/if}}> Tuesday

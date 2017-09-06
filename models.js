@@ -10,8 +10,12 @@ mongoose.connect(mongoURL, {
     console.log('Database ready to be used...!');
   }
 });
-const WaiterName = mongoose.model('WaiterName', {
+
+const Schema = mongoose.Schema;
+const waiterModel = new Schema({
   name : String
 });
+
+const WaiterName = mongoose.model('WaiterName', waiterModel);
 
 module.exports = WaiterName;

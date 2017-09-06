@@ -36,14 +36,13 @@ app.use(flash());
 
 app.use(express.static('public'));
 
-app.get('/about',function(req, res){
-  res.render('about')
-});
 app.get('/waiters', function(req, res) {
   res.render('home');
 })
+app.get('/about', function(req, res){
+  res.render('about')
+})
  app.get('/waiters/:username', waiterRoute.showWaiter);
- app.post('waiters', waiterRoute.showWaiter);
 
  var port = process.env.PORT || 5000;
  app.listen(port, function() {
