@@ -13,7 +13,8 @@ mongoose.connect(mongoURL, {
 
 const Schema = mongoose.Schema;
 const waiterModel = new Schema({
-  name : String
+  name : String,
+  daysToWork: Object
 });
 
 const WaiterName = mongoose.model('WaiterName', waiterModel);

@@ -1,0 +1,62 @@
+<head>
+  <meta charset="utf-8">
+  <title>Admnistrator</title>
+  <link rel="stylesheet" href="/css/admin.css">
+
+</head>
+
+<body>
+  <h6>Available waiters</h6>
+  <table align="center">
+    <thead>
+      <tr>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ul>
+        <td>
+          {{#each mon}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+        <td>
+          {{#each tue}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+        <td>
+          {{#each wed}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+        <td>
+          {{#each thur}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+        <td>
+          {{#each fri}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+        <td>
+          {{#each sat}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+        <td>
+          {{#each sun}}
+            <li>{{this}}</li>
+          {{/each}}
+        </td>
+      </ul>
+    </tbody>
+  </table>
+</body>
