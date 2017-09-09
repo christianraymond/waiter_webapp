@@ -19,44 +19,39 @@ module.exports = function(models) {
     const waiterName = req.params.username.replace(capitalize, toUpperCase);
     const days = req.body.day
 
-    if (!Array.isArray(days)) {
-      days = [days]
-    }
+    // if (!Array.isArray(days)) {
+    //   days = [days]
+    // }
+    //
+    // days.forEach(function(day) {
+    //   daysObject[day] = true;
+    // });
 
-    days.forEach(function(day) {
-      daysObject[day] = true;
-    });
-
-    models.waiterInfo.findOne({
+    models.findOne({
       name: waiterName
+      // daysToWork: days
     }, function(err, waiter) {
       if (err) {
         return next(err);
       } else if (waiter) {
         req.flash('error', 'Waiter Name already existed!')
 
-        const waiterData = {
-          name: waiter.name
-          days: waiter.daysToWork
-        }
         res.render('waitersdays', {
-          waiterData
+          waiter: waiterName,
+          daysToWork: JSON.stringify(waiter.daysToWork)
         });
       } else {
         models.create({
           name: waiterName
-          daysToWork: daysObject
+          // daysToWork: daysObject
         }, function(err, waiter) {
           if (err) {
             return next(err)
           } else {
             req.flash("success", 'Name successfully added');
-            const waiterData = {
-              name: waiter.name,
-              days: waiter.daysToWork
-            }
             res.render('waitersdays', {
-              waiterData
+              waiter: waiterName
+              // daysToWork: days.daysToWork
             });
           }
         });
@@ -68,15 +63,15 @@ module.exports = function(models) {
     const capitalize = req.params.username.substring(0, 1);
     const toUpperCase = req.params.username.substring(0, 1).toUpperCase()
     const waiterName = req.params.username.replace(capitalize, toUpperCase);
-
     var days = req.body.day;
+
     if (!Array.isArray(days)) {
       days = [days]
     }
     days.forEach(function(day) {
       daysObject[day] = true
     });
-    models.waiterInfo.findOneAndUpdate({
+    models.findOneAndUpdate({
            name: waiterName
     }, {
       daysToWork: daysObject
@@ -90,8 +85,12 @@ module.exports = function(models) {
         });
       }
     });
-    req.flash('error', "Your days has been successfully updated.")
+    req.flash('success', "Your days has been successfully added.")
     res.redirect('/waiters/' + waiterName);
+    // res.render('waitersdays', {
+    //   name: waiterName,
+    //   daysToWork: daysObject
+    // });
   }
 
   function admin(req, res, next) {
@@ -102,7 +101,7 @@ module.exports = function(models) {
     Friday = [];
     Saturday = [];
     Sunday = [];
-    models.waiterInfo.find({}, function(err, shift) {
+    models.find({}, function(err, shift) {
       console.log(shift);
       if (err) {
         return next(err)
@@ -145,5 +144,6 @@ module.exports = function(models) {
     showWaiter,
     days,
     admin
+
   }
 };

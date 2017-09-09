@@ -4,7 +4,7 @@ body {
 	background-size: cover;
 	text-align: center;
 }
-output{
+output, p{
 	color: white;
 }
 .days {

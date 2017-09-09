@@ -42,13 +42,10 @@ app.get('/waiters', function(req, res) {
 app.get('/about', function(req, res){
   res.render('about')
 })
+
  app.get('/waiters/:username', waiterRoute.showWaiter);
- app.post('/waiters/days', function(req, res, next){
-  //  console.log("Hello where is your selected names?");
-   res.render('home')
- });
-
-
+ app.post('/waiters/:username', waiterRoute.days);
+ app.get('/admin', waiterRoute.admin);
 
  var port = process.env.PORT || 5000;
  app.listen(port, function() {

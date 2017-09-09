@@ -19,9 +19,9 @@
       </div>
       {{/if}}
 
-      <p>Hello, {{waiter.name}}, select your prefered working days below.</p>
+      <p>Hello, {{waiter}}, select your prefered working days below.</p>
     </output></kbd>
-    <form class="days" action="days" method="post">
+    <form class="days" action="" method="post">
       <input type="checkbox" name="day" value="Monday" {{#if shift.Monday}} checked {{/if}}> Monday
       <input type="checkbox" name="day" value="Tuesday" {{#if shift.Tuesday}} checked {{/if}}> Tuesday
       <input type="checkbox" name="day" value="Wenesday" {{#if shift.Wenesday}} checked {{/if}}> Wenesday
@@ -31,5 +31,7 @@
       <input type="checkbox" name="day" value="Sunday" {{#if shift.Sunday}} checked {{/if}}> Sunday
       <br><input type="submit" name="submit" value="Submit" required>
     </form>
+    <hr>
+    <p>{{daysToWork}}</p>
   </body>
   </html>
