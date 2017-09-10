@@ -19,14 +19,6 @@ module.exports = function(models) {
     const waiterName = req.params.username.replace(capitalize, toUpperCase);
     const days = req.body.day
 
-    // if (!Array.isArray(days)) {
-    //   days = [days]
-    // }
-    //
-    // days.forEach(function(day) {
-    //   daysObject[day] = true;
-    // });
-
     models.findOne({
       name: waiterName
       // daysToWork: days
@@ -87,10 +79,15 @@ module.exports = function(models) {
     });
     req.flash('success', "Your days has been successfully added.")
     res.redirect('/waiters/' + waiterName);
-    // res.render('waitersdays', {
-    //   name: waiterName,
-    //   daysToWork: daysObject
-    // });
+  }
+  function roasterCoulorStyle(waiterCounter){
+    if (waiterCounter === 3){
+      return 'bg-success'
+    }else if (waiterCounter < 3) {
+      return 'bg-warning'
+    }else {
+      return 'big-danger'
+    }
   }
 
   function admin(req, res, next) {
@@ -107,8 +104,8 @@ module.exports = function(models) {
         return next(err)
       } else {
         for (var i = 0; i < shift.length; i++) {
-          var curDays = shift[i].daysToWork;
-          for (var day in curDays) {
+          var myDays = shift[i].daysToWork;
+          for (var day in myDays) {
             if (day == 'Monday') {
               Monday.push(shift[i].waiterName);
             } else if (day == 'Tuesday') {
@@ -128,13 +125,30 @@ module.exports = function(models) {
         }
       }
       res.render("admin", {
-        mon: Monday,
-        tue: Tuesday,
-        wed: Wednesday,
-        thur: Thursday,
-        fri: Friday,
-        sat: Saturday,
-        sun: Sunday
+      mondayNames: Monday,
+      mondayCounter: Monday.length,
+      mondayStyle: roasterCoulorStyle(Monday.length),
+
+      tuesdayNames: Tuesday,
+      tuesdayCounter: Tuesday.length,
+      tuesdayStyle: roasterCoulorStyle(Tuesday.length),
+
+      wednesdayNames: Wednesday,
+      wednesdayCounter: Wednesday.length,
+      wednesdayStyle: roasterCoulorStyle(Wednesday.length),
+
+      thursdayNames: Thursday,
+      thursdayCounter: Thursday.length,
+      thursdayStyle: roasterCoulorStyle(Thursday.length),
+      fridayNames: Friday,
+      fridayCounter: Friday.length,
+      fridayStyle: roasterCoulorStyle(Friday.length),
+      saturdayNames: Saturday,
+      saturdayCounter: Saturday.length,
+      saturdayStyle: roasterCoulorStyle(Saturday.length),
+      sundayNames: Sunday,
+      sundayCounter: Sunday.length,
+      sundayStyle: roasterCoulorStyle(Sunday.length),
       });
     });
   }
@@ -143,7 +157,64 @@ module.exports = function(models) {
     index,
     showWaiter,
     days,
+    roasterCoulorStyle,
     admin
 
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// app.get('/reset/roaster', function(req, res) {
+//     WaiterAvailability.find({}, function(err, db) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//           console.log(db);
+//           db.forEach(function(data){
+//               data.workingDays = [];
+//               data.save();
+//           })
+//         }
+//       }).then(function(){
+//         res.redirect('/admin/days')
+//       });
+// })

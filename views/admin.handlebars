@@ -3,74 +3,151 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/css/admin.css">
   </head>
   <body>
+  <div class="row d-flex justify-content-between col-md-12 col-lg-12 col-sm-12 center-block" data-children=".item">
+    <div class="card text-white mb-2 mb-2 col-md-4 col-sm-12  {{mondayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Monday<span class="badge badge-secondary ml-2">{{mondayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#mondayCollapse" aria-expanded="false" aria-controls="collapse1">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
 
-<head>
-  <meta charset="utf-8">
-  <title>Admnistrator</title>
-  <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <div class="card text-white mb-2 col-md-6 col-sm-12  {{tuesdayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Tuesday<span class="badge badge-secondary ml-2">{{tuesdayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#tuesdayCollapse" aria-expanded="false" aria-controls="collapse2">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
 
-</head>
-<style>
-body {
-  color: white;
-}
+    <div class="card text-white mb-2 mb-2 col-md-6 col-sm-12  {{wednesdayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Wednesday<span class="badge badge-secondary ml-2">{{wednesdayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#wednesdayCollapse" aria-expanded="false" aria-controls="collapse3">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
 
-</style>
-<body>
-  <h6>Available waiters</h6>
-  <table align="center">
-    <thead>
-      <tr>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Saturday</th>
-        <th>Sunday</th>
-      </tr>
-    </thead>
-    <tbody>
-      <ul>
-        <td>
-          {{#each mon}}
-            <li>{{this}}</li>
+    <div class="card text-white mb-2 mb-2 col-md-6 col-sm-12  {{thursdayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Thursday<span class="badge badge-secondary ml-2">{{thursdayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#thursdayCollapse" aria-expanded="false" aria-controls="collapse4">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
+
+    <div class="card text-white mb-2 mb-2 col-md-6 col-sm-12  {{fridayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Friday<span class="badge badge-secondary ml-2">{{fridayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#fridayCollapse" aria-expanded="false" aria-controls="collapse5">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
+
+    <div class="card text-white mb-2 mb-2 col-md-6 col-sm-12  {{saturdayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Saturday<span class="badge badge-secondary ml-2">{{saturdayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#saturdayCollapse" aria-expanded="false" aria-controls="collapse6">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
+
+    <div class="card text-white mb-2 mb-2 col-md-6 col-sm-12  {{sundayStyle}}" style="max-width: 20rem;">
+      <div class="card-header">Sunday<span class="badge badge-secondary ml-2">{{sundayCounter}}</span></div>
+      <div class="card-body">
+        <p class="card-text"><a data-toggle="collapse" data-parent="#exampleAccordion"  href="#sundayCollapse" aria-expanded="false" aria-controls="collapse7">view names <span class="lnr lnr-chevron-right"></span></a></p>
+      </div>
+    </div>
+</div>
+
+
+    <div class="collapse mt-5 mx-5" id="mondayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6">Monday</h2>
+        <div class="row">
+          {{#each mondayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-        <td>
-          {{#each tue}}
-            <li>{{this}}</li>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="collapse mt-5 mx-5" id="tuesdayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6">Tuesday</h2>
+        <div class="row">
+          {{#each tuesdayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-        <td>
-          {{#each wed}}
-            <li>{{this}}</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse mt-5 mx-5" id="wednesdayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6">Wednesday</h2>
+        <div class="row">
+          {{#each wednesdayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-        <td>
-          {{#each thur}}
-            <li>{{this}}</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse mt-5 mx-5" id="thursdayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6"> Thursday</h2>
+        <div class="row">
+          {{#each thursdayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-        <td>
-          {{#each fri}}
-            <li>{{this}}</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse mt-5 mx-5" id="fridayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6">Friday</h2>
+        <div class="row">
+          {{#each fridayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-        <td>
-          {{#each sat}}
-            <li>{{this}}</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse mt-5 mx-5" id="saturdayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6">Saturday</h2>
+        <div class="row">
+          {{#each saturdayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-        <td>
-          {{#each sun}}
-            <li>{{this}}</li>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse mt-5 mx-5" id="sundayCollapse" role="tabpanel">
+      <div class="card card-body">
+        <h2 class="display-6">Sunday</h2>
+        <div class="row">
+          {{#each sundayNames}}
+            <div class="col-md-3 col-lg-2 mt-4">
+              <li id="names">{{this}}</li>
+            </div>
           {{/each}}
-        </td>
-      </ul>
-    </tbody>
-  </table>
-</body>
-</html>
+        </div>
+      </div>
+    </div>
+  </body>
+  </html>
