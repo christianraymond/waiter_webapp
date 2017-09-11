@@ -42,7 +42,7 @@ module.exports = function(models) {
           } else {
             req.flash("success", 'Name successfully added');
             res.render('waitersdays', {
-              waiter: waiterName
+              name: waiterName
               // daysToWork: days.daysToWork
             });
           }
