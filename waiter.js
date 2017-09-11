@@ -77,7 +77,7 @@ module.exports = function(models) {
         });
       }
     });
-    req.flash('success', "Your days has been successfully added.")
+    req.flash('success', "Your day(s) has been successfully added.")
     res.redirect('/waiters/' + waiterName);
   }
 

@@ -36,9 +36,13 @@ app.use(flash());
 
 app.use(express.static('public'));
 
-app.get('/waiters', function(req, res) {
+app.get('/', function(req, res) {
   res.render('home');
 })
+app.get('/waiters', function(req, res){
+  res.render('home')
+})
+
 app.get('/about', function(req, res){
   res.render('about')
 })
