@@ -80,6 +80,7 @@ module.exports = function(models) {
     req.flash('success', "Your days has been successfully added.")
     res.redirect('/waiters/' + waiterName);
   }
+
   function roasterCoulorStyle(waiterCounter){
     if (waiterCounter === 3){
       return 'bg-success'
@@ -99,27 +100,28 @@ module.exports = function(models) {
     Saturday = [];
     Sunday = [];
     models.find({}, function(err, shift) {
-      console.log(shift);
+      // console.log(shift);
       if (err) {
         return next(err)
       } else {
+        // console.log(shift);
         for (var i = 0; i < shift.length; i++) {
           var myDays = shift[i].daysToWork;
           for (var day in myDays) {
             if (day == 'Monday') {
-              Monday.push(shift[i].waiterName);
+              Monday.push(shift[i].name);
             } else if (day == 'Tuesday') {
-              Tuesday.push(shift[i].waiterName);
+              Tuesday.push(shift[i].name);
             } else if (day == 'Wednesday') {
-              Wednesday.push(shift[i].waiterName);
+              Wednesday.push(shift[i].name);
             } else if (day == 'Thursday') {
-              Thursday.push(shift[i].waiterName);
+              Thursday.push(shift[i].name);
             } else if (day == 'Friday') {
-              Friday.push(shift[i].waiterName);
+              Friday.push(shift[i].name);
             } else if (day == 'Saturday') {
-              Saturday.push(shift[i].waiterName);
+              Saturday.push(shift[i].name );
             } else if (day == 'Sunday') {
-              Sunday.push(shift[i].waiterName);
+              Sunday.push(shift[i].name);
             }
           }
         }
@@ -140,12 +142,15 @@ module.exports = function(models) {
       thursdayNames: Thursday,
       thursdayCounter: Thursday.length,
       thursdayStyle: roasterCoulorStyle(Thursday.length),
+
       fridayNames: Friday,
       fridayCounter: Friday.length,
       fridayStyle: roasterCoulorStyle(Friday.length),
+
       saturdayNames: Saturday,
       saturdayCounter: Saturday.length,
       saturdayStyle: roasterCoulorStyle(Saturday.length),
+
       sundayNames: Sunday,
       sundayCounter: Sunday.length,
       sundayStyle: roasterCoulorStyle(Sunday.length),
@@ -159,7 +164,6 @@ module.exports = function(models) {
     days,
     roasterCoulorStyle,
     admin
-
   }
 };
 
