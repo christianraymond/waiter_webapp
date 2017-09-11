@@ -29,8 +29,8 @@ module.exports = function(models) {
         req.flash('error', 'Waiter Name already existed!')
 
         res.render('waitersdays', {
-          waiter: waiterName,
-          daysToWork: JSON.stringify(waiter.daysToWork)
+          name: waiter.name,
+          days: waiter.daysToWork
         });
       } else {
         models.create({
@@ -84,9 +84,9 @@ module.exports = function(models) {
   function roasterCoulorStyle(waiterCounter){
     if (waiterCounter === 3){
       return 'bg-success'
-    }else if (waiterCounter < 3) {
+    }else if (waiterCounter > 3) {
       return 'bg-warning'
-    }else {
+    }else{
       return 'big-danger'
     }
   }
@@ -206,8 +206,8 @@ module.exports = function(models) {
 
 
 //
-// app.get('/reset/roaster', function(req, res) {
-//     WaiterAvailability.find({}, function(err, db) {
+// app.get('/reset/roaster', waiterRoute.admin)
+//     nextWeekWaiters.find({}, function(err, db) {
 //         if (err) {
 //             console.log(err);
 //         }

@@ -19,19 +19,19 @@
       </div>
       {{/if}}
 
-      <p>Hello, {{waiter}}, select your prefered working days below.</p>
+      <p>Hello, {{name}}, select your prefered working days below.</p>
     </output></kbd>
     <form class="days" action="" method="post">
-      <input type="checkbox" name="day" value="Monday" {{#if shift.Monday}} checked {{/if}}> Monday
-      <input type="checkbox" name="day" value="Tuesday" {{#if shift.Tuesday}} checked {{/if}}> Tuesday
-      <input type="checkbox" name="day" value="Wednesday" {{#if shift.Wednesday}} checked {{/if}}> Wednesday
-      <input type="checkbox" name="day" value="Thursday" {{#if shift.Thursday}} checked {{/if}}> Thursday
-      <input type="checkbox" name="day" value="Friday" {{#if shift.Friday}} checked {{/if}}> Friday
-      <input type="checkbox" name="day" value="Saturday" {{#if shift.Saturday}} checked {{/if}}> Saturday
-      <input type="checkbox" name="day" value="Sunday" {{#if shift.Sunday}} checked {{/if}}> Sunday
+      <input type="checkbox" name="day" value="Monday" {{#if days.Monday}} checked {{/if}}> Monday
+      <input type="checkbox" name="day" value="Tuesday" {{#if days.Tuesday}} checked {{/if}}> Tuesday
+      <input type="checkbox" name="day" value="Wednesday" {{#if days.Wednesday}} checked {{/if}}> Wednesday
+      <input type="checkbox" name="day" value="Thursday" {{#if days.Thursday}} checked {{/if}}> Thursday
+      <input type="checkbox" name="day" value="Friday" {{#if days.Friday}} checked {{/if}}> Friday
+      <input type="checkbox" name="day" value="Saturday" {{#if days.Saturday}} checked {{/if}}> Saturday
+      <input type="checkbox" name="day" value="Sunday" {{#if days.Sunday}} checked {{/if}}> Sunday
       <br><input type="submit" name="submit" value="Submit" required>
     </form>
     <hr>
-    <p>{{daysToWork}}</p>
-  </body>
+</body>
+   <!-- {{daysToWork}} -->
   </html>
