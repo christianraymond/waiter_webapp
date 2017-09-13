@@ -33,14 +33,18 @@ button a:hover{
 
 .row .col-lg-2 li{
   display: inline-block;
+  text-align: center;
 }
 
 .card-header{
   color: black;
   font-size: 30px;
 }
-
-.displayDaysNames{
+.display-6{
   color: white;
+}
+.reset{
+  float: right;
   font-weight: bolder;
+  background-color: red;
 }

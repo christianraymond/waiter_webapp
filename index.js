@@ -50,6 +50,7 @@ app.get('/about', function(req, res){
  app.get('/waiters/:username', waiterRoute.showWaiter);
  app.post('/waiters/:username', waiterRoute.days);
  app.get('/admin', waiterRoute.admin);
+ app.post('/admin/resetWaiters', waiterRoute.resetWaiters);
 
  var port = process.env.PORT || 5000;
  app.listen(port, function() {

@@ -50,6 +50,7 @@ module.exports = function(models) {
       };
     });
   }
+
   function days(req, res, next) {
     var daysObject = {};
     const capitalize = req.params.username.substring(0, 1);
@@ -64,7 +65,7 @@ module.exports = function(models) {
       daysObject[day] = true
     });
     models.findOneAndUpdate({
-           name: waiterName
+      name: waiterName
     }, {
       daysToWork: daysObject
     }, function(err, shift) {
@@ -72,7 +73,7 @@ module.exports = function(models) {
         console.log(err);
       } else if (!shift) {
         models.waiterInfo.create({
-            name: waiterName,
+          name: waiterName,
           daysToWork: daysObject
         });
       }
@@ -81,12 +82,12 @@ module.exports = function(models) {
     res.redirect('/waiters/' + waiterName);
   }
 
-  function roasterCoulorStyle(waiterCounter){
-    if (waiterCounter === 3){
+  function roasterCoulorStyle(waiterCounter) {
+    if (waiterCounter === 3) {
       return 'bg-success'
-    }else if (waiterCounter > 3) {
+    } else if (waiterCounter > 3) {
       return 'bg-warning'
-    }else{
+    } else {
       return 'big-danger'
     }
   }
@@ -119,7 +120,7 @@ module.exports = function(models) {
             } else if (day == 'Friday') {
               Friday.push(shift[i].name);
             } else if (day == 'Saturday') {
-              Saturday.push(shift[i].name );
+              Saturday.push(shift[i].name);
             } else if (day == 'Sunday') {
               Sunday.push(shift[i].name);
             }
@@ -127,43 +128,53 @@ module.exports = function(models) {
         }
       }
       res.render("admin", {
-      mondayNames: Monday,
-      mondayCounter: Monday.length,
-      mondayStyle: roasterCoulorStyle(Monday.length),
+        mondayNames: Monday,
+        mondayCounter: Monday.length,
+        mondayStyle: roasterCoulorStyle(Monday.length),
 
-      tuesdayNames: Tuesday,
-      tuesdayCounter: Tuesday.length,
-      tuesdayStyle: roasterCoulorStyle(Tuesday.length),
+        tuesdayNames: Tuesday,
+        tuesdayCounter: Tuesday.length,
+        tuesdayStyle: roasterCoulorStyle(Tuesday.length),
 
-      wednesdayNames: Wednesday,
-      wednesdayCounter: Wednesday.length,
-      wednesdayStyle: roasterCoulorStyle(Wednesday.length),
+        wednesdayNames: Wednesday,
+        wednesdayCounter: Wednesday.length,
+        wednesdayStyle: roasterCoulorStyle(Wednesday.length),
 
-      thursdayNames: Thursday,
-      thursdayCounter: Thursday.length,
-      thursdayStyle: roasterCoulorStyle(Thursday.length),
+        thursdayNames: Thursday,
+        thursdayCounter: Thursday.length,
+        thursdayStyle: roasterCoulorStyle(Thursday.length),
 
-      fridayNames: Friday,
-      fridayCounter: Friday.length,
-      fridayStyle: roasterCoulorStyle(Friday.length),
+        fridayNames: Friday,
+        fridayCounter: Friday.length,
+        fridayStyle: roasterCoulorStyle(Friday.length),
 
-      saturdayNames: Saturday,
-      saturdayCounter: Saturday.length,
-      saturdayStyle: roasterCoulorStyle(Saturday.length),
+        saturdayNames: Saturday,
+        saturdayCounter: Saturday.length,
+        saturdayStyle: roasterCoulorStyle(Saturday.length),
 
-      sundayNames: Sunday,
-      sundayCounter: Sunday.length,
-      sundayStyle: roasterCoulorStyle(Sunday.length),
+        sundayNames: Sunday,
+        sundayCounter: Sunday.length,
+        sundayStyle: roasterCoulorStyle(Sunday.length),
       });
     });
   }
+
+    function resetWaiters(req, res, next) {
+      models.remove({}, function(err, db) {
+        if (err) {
+          console.log(err);
+        }
+        res.redirect("/admin")
+      })
+    }
 
   return {
     index,
     showWaiter,
     days,
     roasterCoulorStyle,
-    admin
+    admin,
+    resetWaiters
   }
 };
 
@@ -171,54 +182,19 @@ module.exports = function(models) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //
-// app.get('/reset/roaster', waiterRoute.admin)
-//     nextWeekWaiters.find({}, function(err, db) {
-//         if (err) {
-//             console.log(err);
-//         }
-//         else {
-//           console.log(db);
-//           db.forEach(function(data){
-//               data.workingDays = [];
-//               data.save();
-//           })
-//         }
-//       }).then(function(){
-//         res.redirect('/admin/days')
-//       });
-// })
+//   function nextWeekWaiters(req, res, next) {
+//     models.find({}, function(err, db) {
+//       if (err) {
+//         console.log(err);
+//       } else {
+//         console.log(db);
+//         db.forEach(function(data) {
+//           data.workingDays = [];
+//           data.save();
+//         })
+//       }
+//     }).then(function() {
+//       res.redirect('/admin')
+//     });
+//   }
