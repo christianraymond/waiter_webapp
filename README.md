@@ -44,17 +44,7 @@ Here is how my package.json looks after doing all the above.
 This should look almost the same to yours.
 
 ` {
-  "name": "waiterapp",
-  "version": "1.0.0",
-  "description": "Creating a water webapplication",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "author": "ChrisNgu",
-  "license": "ISC",
-  "dependencies": {
+  "dependencies":
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "express-flash": "0.0.2",
@@ -66,10 +56,6 @@ This should look almost the same to yours.
     "mongoose": "^4.11.10",
     "nodemon": "^1.12.0",
     "session": "^0.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.12.0"
-  }
 }`
 
 # Running the app locally.
@@ -82,3 +68,62 @@ The output should like this inside your command prompt:
    Database ready to be used...!`
   Now inside the browser type: `http://localhost:5000`
   your app should be ready and running.(Grap a cap of... and celebrate your success.)
+
+# How to start the app from scratch.
+ inside your Terminal type:
+ `mkdir + the name of your project`,
+ cd in the project using this command `cd + the name of the directory your created`,
+ Your can also type `pwd` to make sure in the right directory or folder.
+ Once you are in type `npm init -y` this will generate or create your express app.
+  output should look something like this:
+    `{
+  "name": "readme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+`From there you can start creating the file ender your folder name and start your ExpressJs app.
+[Click](https://expressjs.com/en/starter/hello-world.html)this link to get some hint on how to star your express app if you are getting stuck.
+
+# Deploying to Github
+ Assume you created a Github account.
+Inside your project folder type:
+  `git init`
+  `git commit -m 'write your comment here'`
+  `git push -u origin master`
+- NB
+For the first time push to the branch master your need to copy and the paste the
+`git add remote + the url containing your repo name`
+
+# Deploying to Heroku
+Assume that you have:
+Node.js and npm installed.
+an existing Node.js app.
+a free Heroku account.
+the Heroku CLI.
+
+Type these commands.
+`$ heroku create
+Creating pure-citadel-24793 ... done, stack is cedar
+http://arcane-lowlands-8408.herokuapp.com/ | git@heroku.com:arcane-lowlands-8408.git
+Git remote heroku added
+$ git push heroku master
+...
+-----> Node.js app detected
+...
+-----> Launching... done
+       https://pure-citadel-24793.herokuapp.com/ deployed to Heroku`
+And then the following.
+`$ git add .
+$ git commit -m "Added a Procfile."
+$ heroku login
+Enter your Heroku credentials.`   
+
+Then start your app locally using heroku local command which is installed as a part of the Heroku CLI.
+$ heroku local web Your app should now be running on http://localhost:5000/.
