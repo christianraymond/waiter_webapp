@@ -14,6 +14,9 @@ First in your command prompt, run
 `node -v` you should see something like:
 `v8.3.0`, depending on your version, if you see nothing follow the link bellow to install nodejs: [here](https://nodejs.org/en/download/package-manager/)
 
-Next install ExpressJs.
-Run ```$ npm install --save express```
-click [Here](https://www.npmjs.com/package/express) for more details on how to install expressjs package-manager. 
+Next install(npm dependencies)
+- ExpressJs: Run ```$ npm install --save express```
+click [Here](https://www.npmjs.com/package/express) for more details on how to install expressjs package-manager.
+
+ - [body-parser](https://www.npmjs.com/package/body-parser) ```$ npm install body-parser```
+ - [express-flash](https://www.npmjs.com/package/express-flash) ```npm install git://github.com/RGBboy/express-flash.git```
