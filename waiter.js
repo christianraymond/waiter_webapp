@@ -21,7 +21,6 @@ module.exports = function(models) {
 
     models.findOne({
       name: waiterName
-      // daysToWork: days
     }, function(err, waiter) {
       if (err) {
         return next(err);
@@ -35,7 +34,6 @@ module.exports = function(models) {
       } else {
         models.create({
           name: waiterName
-          // daysToWork: daysObject
         }, function(err, waiter) {
           if (err) {
             return next(err)
@@ -43,7 +41,6 @@ module.exports = function(models) {
             req.flash("success", 'Name successfully added');
             res.render('waitersdays', {
               name: waiterName
-              // daysToWork: days.daysToWork
             });
           }
         });
@@ -101,11 +98,9 @@ module.exports = function(models) {
     Saturday = [];
     Sunday = [];
     models.find({}, function(err, shift) {
-      // console.log(shift);
       if (err) {
         return next(err)
       } else {
-        // console.log(shift);
         for (var i = 0; i < shift.length; i++) {
           var myDays = shift[i].daysToWork;
           for (var day in myDays) {
@@ -159,14 +154,14 @@ module.exports = function(models) {
     });
   }
 
-    function resetWaiters(req, res, next) {
-      models.remove({}, function(err, db) {
-        if (err) {
-          console.log(err);
-        }
-        res.redirect("/admin")
-      })
-    }
+  function resetWaiters(req, res, next) {
+    models.remove({}, function(err, db) {
+      if (err) {
+        console.log(err);
+      }
+      res.redirect("/admin")
+    })
+  }
 
   return {
     index,
@@ -177,24 +172,3 @@ module.exports = function(models) {
     resetWaiters
   }
 };
-
-
-
-
-
-//
-//   function nextWeekWaiters(req, res, next) {
-//     models.find({}, function(err, db) {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(db);
-//         db.forEach(function(data) {
-//           data.workingDays = [];
-//           data.save();
-//         })
-//       }
-//     }).then(function() {
-//       res.redirect('/admin')
-//     });
-//   }
