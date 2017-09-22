@@ -10,4 +10,6 @@ A step by step series of examples that tell you have to get a development env ru
 - Step1
 
 Depending on your OS running in your machine,
-First in your command prompt,run `node -v` you should see something like: `v8.3.0`, depending on your version, if you see nothing follow the link bellow to install nodejs:[here(https://nodejs.org/en/download/package-manager/)]
+First in your command prompt,run
+`node -v` you should see something like:
+`v8.3.0`, depending on your version, if you see nothing follow the link bellow to install nodejs:[here](https://nodejs.org/en/download/package-manager/)
