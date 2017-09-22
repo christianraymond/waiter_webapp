@@ -21,5 +21,5 @@ Next install(npm dependencies)
 - [express-flash](https://www.npmjs.com/package/express-flash): ```npm install git://github.com/RGBboy/express-flash.git```
 - [express-handlebars](https://www.npmjs.com/package/express-handlebars):```$ npm install express-handlebars```
 - [express-session](https://www.npmjs.com/package/express-session): ```$ npm install express-session```
-- [express-flash](https://www.npmjs.com/package/express-flash): ```npm install git://github.com/RGBboy/express-flash.git
-```- [session](https://www.npmjs.com/package/express-session): ```$ npm install express-session```
+- [express-flash](https://www.npmjs.com/package/express-flash): ```npm install git://github.com/RGBboy/express-flash.git```
+- [session](https://www.npmjs.com/package/express-session): ```$ npm install express-session```
