@@ -47,7 +47,8 @@ You will deploy your Web Application using heroku, it’s a PaaS (Platform as a 
 Here is how my package.json looks after doing all the above.
 This should look almost the same to yours.
 
-` {
+```
+ {
   "dependencies":
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
@@ -60,7 +61,8 @@ This should look almost the same to yours.
     "mongoose": "^4.11.10",
     "nodemon": "^1.12.0",
     "session": "^0.1.0"
-}`
+}
+```
 
 # Running the app locally.
 Assume that you already did all the above steps.
@@ -85,7 +87,8 @@ The output should like this inside your command prompt:
  Once you are in type `npm init -y` this will generate or create your express app.
   output should look something like this:
 
-```{
+```
+{
   "name": "readme",
   "version": "1.0.0",
   "description": "",
