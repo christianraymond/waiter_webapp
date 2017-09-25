@@ -85,7 +85,7 @@ The output should like this inside your command prompt:
  Once you are in type `npm init -y` this will generate or create your express app.
   output should look something like this:
 
-    ```{
+```{
   "name": "readme",
   "version": "1.0.0",
   "description": "",
@@ -98,6 +98,7 @@ The output should like this inside your command prompt:
   "license": "ISC"
 }
 ```
+
 From there you can start creating the file ender your folder name and start your ExpressJs app.
 [Click](https://expressjs.com/en/starter/hello-world.html)this link to get some hint on how to star your express app if you are getting stuck.
 
