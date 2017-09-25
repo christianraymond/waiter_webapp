@@ -108,6 +108,7 @@ From there you can start creating the file ender your folder name and start your
  Assume you created a Github account.
 Inside your project folder type:
   `git init `</br>
+  `git add .` </br>
   `git commit -m 'write your comment here` </br>
   `git push -u origin master`
 - NB
