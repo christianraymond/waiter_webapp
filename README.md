@@ -102,13 +102,13 @@ The output should like this inside your command prompt:
 ```
 
 From there you can start creating the file ender your folder name and start your ExpressJs app.
-[Click](https://expressjs.com/en/starter/hello-world.html)this link to get some hint on how to star your express app if you are getting stuck.
+[Click](https://expressjs.com/en/starter/hello-world.html) this link to get some hint on how to star your express app if you are getting stuck.
 
 # Deploying to Github
  Assume you created a Github account.
 Inside your project folder type:
-  `git init`
-  `git commit -m 'write your comment here'`
+  `git init `</br>
+  `git commit -m 'write your comment here` </br>
   `git push -u origin master`
 - NB
 For the first time push to the branch master your need to copy and the paste the
