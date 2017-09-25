@@ -47,8 +47,7 @@ You will deploy your Web Application using heroku, it’s a PaaS (Platform as a 
 Here is how my package.json looks after doing all the above.
 This should look almost the same to yours.
 
-```
- {
+```{
   "dependencies":
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
@@ -70,10 +69,10 @@ Now inside your command prompt(Terminal for Ubuntu user)go inside your root dire
 once you are in type `index.js`
 The output should like this inside your command prompt:
 
-```App runnig on http://localhost:5000```
-   ``Database ready to be used...!```
+`App runnig on http://localhost:5000`
+   `Database ready to be used...!`
 
-  Now inside the browser type: ```http://localhost:5000```
+  Now inside the browser type: `http://localhost:5000`
   your app should be ready and running.
   (Grap a cap of... and celebrate your success.)
   don't forget to press Ctr + c to stop the server.
@@ -81,9 +80,9 @@ The output should like this inside your command prompt:
 # How to create the app from scratch.
 
  inside your Terminal type:
- `mkdir + the name of your project`,
- `cd``` in the project using this command `cd + the name of the directory your created`,
- Your can also type `pwd` to make sure in the right directory or folder.
+ `mkdir + the name of your project`,</br>
+ then type `cd` in the project using this command </br> now `cd + the name of the directory your created`,
+ Your can also type `pwd` to make sure in the right directory or folder.</br>
  Once you are in type `npm init -y` this will generate or create your express app.
   output should look something like this:
 
