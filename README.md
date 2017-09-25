@@ -2,7 +2,11 @@
 Waiter App is a website that enables a Restaurant or a Hotel owners to get waiters online. Waiters can access the site, input theirs names, and select the days they would preffere to work. Then the Admin side is to allow the employer see the waiters availability for a particular day. It also allow them to clear the list for a new week update.
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing
+purposes. See deployment for notes on how to deploy the project on a live system.
+
+Clone this [Repositoy](https://github.com/christianraymond/waiter_webapp), copy and past:
+`git clone https://github.com/christianraymond/waiter_webapp` inside your project folder.
 
 # Prerequisites
 Things you need to install and how to install them.
@@ -64,19 +68,24 @@ Now inside your command prompt(Terminal for Ubuntu user)go inside your root dire
 once you are in type `index.js`
 The output should like this inside your command prompt:
 
-`App runnig on http://localhost:5000
-   Database ready to be used...!`
-  Now inside the browser type: `http://localhost:5000`
-  your app should be ready and running.(Grap a cap of... and celebrate your success.)
+```App runnig on http://localhost:5000```
+   ``Database ready to be used...!```
 
-# How to start the app from scratch.
+  Now inside the browser type: ```http://localhost:5000```
+  your app should be ready and running.
+  (Grap a cap of... and celebrate your success.)
+  don't forget to press Ctr + c to stop the server.
+
+# How to create the app from scratch.
+
  inside your Terminal type:
  `mkdir + the name of your project`,
- cd in the project using this command `cd + the name of the directory your created`,
+ `cd``` in the project using this command `cd + the name of the directory your created`,
  Your can also type `pwd` to make sure in the right directory or folder.
  Once you are in type `npm init -y` this will generate or create your express app.
   output should look something like this:
-    `{
+
+    ```{
   "name": "readme",
   "version": "1.0.0",
   "description": "",
@@ -88,7 +97,8 @@ The output should like this inside your command prompt:
   "author": "",
   "license": "ISC"
 }
-`From there you can start creating the file ender your folder name and start your ExpressJs app.
+```
+From there you can start creating the file ender your folder name and start your ExpressJs app.
 [Click](https://expressjs.com/en/starter/hello-world.html)this link to get some hint on how to star your express app if you are getting stuck.
 
 # Deploying to Github
@@ -109,7 +119,7 @@ a free Heroku account.
 the Heroku CLI.
 
 Type these commands.
-`$ heroku create
+```$ heroku create
 Creating pure-citadel-24793 ... done, stack is cedar
 http://arcane-lowlands-8408.herokuapp.com/ | git@heroku.com:arcane-lowlands-8408.git
 Git remote heroku added
@@ -118,10 +128,11 @@ $ git push heroku master
 -----> Node.js app detected
 ...
 -----> Launching... done
-       https://pure-citadel-24793.herokuapp.com/ deployed to Heroku`
+       https://pure-citadel-24793.herokuapp.com/ deployed to Heroku```
+
 And then the following.
-`$ git add .
-$ git commit -m "Added a Procfile."
+`$ git add ,
+$ git commit -m "Added a Procfile.",
 $ heroku login
 Enter your Heroku credentials.`   
 
@@ -135,9 +146,6 @@ $ heroku local web Your app should now be running on http://localhost:5000/.
 
 Visit this site online.
 - [Launch](https://pure-citadel-24793.herokuapp.com/)
-
-Clone this [Repositoy](https://github.com/christianraymond/waiter_webapp), copy and past:
-```git clone https://github.com/christianraymond/waiter_webapp``` inside your project folder.
 
 # Author
 - Christian Ngubana -initiative work -[Christian Raymond](https://github.com/christianraymond?tab=repositories)
