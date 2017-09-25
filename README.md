@@ -129,12 +129,12 @@ Then start your app locally using heroku local command which is installed as a p
 $ heroku local web Your app should now be running on http://localhost:5000/.
 
 # Built with
-- [MLAB](MongoDB Cloud Server),
-- [Bootstrap](The web framework used),
-- [NPM](Node Package Manager/dependencies).
+- [MLAB](https://mlab.com/)(MongoDB Cloud Server),
+- [Bootstrap](https://v4-alpha.getbootstrap.com/)(The web framework used),
+- [NPM](https://www.npmjs.com/)(Node Package Manager/dependencies).
 
 Visit this site online.
-# [Launch](https://pure-citadel-24793.herokuapp.com/)
+######[Launch](https://pure-citadel-24793.herokuapp.com/)
 
 Clone this [Repositoy](https://github.com/christianraymond/waiter_webapp), copy and past:
 https://github.com/christianraymond/waiter_webapp inside your project folder.
@@ -144,3 +144,9 @@ https://github.com/christianraymond/waiter_webapp inside your project folder.
 
 # version
 `version": "1.0.0`.
+
+# License
+This project is licensed ender ISC -see [ISC](https://www.isc2.org/) for more information.
+
+# Acknowledgments
+  - Andre Vermeulen.
