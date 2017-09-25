@@ -134,7 +134,7 @@ $ heroku local web Your app should now be running on http://localhost:5000/.
 - [NPM](https://www.npmjs.com/)(Node Package Manager/dependencies).
 
 Visit this site online.
-######[Launch](https://pure-citadel-24793.herokuapp.com/)
+- [Launch](https://pure-citadel-24793.herokuapp.com/)
 
 Clone this [Repositoy](https://github.com/christianraymond/waiter_webapp), copy and past:
 https://github.com/christianraymond/waiter_webapp inside your project folder.
