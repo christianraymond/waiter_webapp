@@ -137,7 +137,7 @@ Visit this site online.
 - [Launch](https://pure-citadel-24793.herokuapp.com/)
 
 Clone this [Repositoy](https://github.com/christianraymond/waiter_webapp), copy and past:
-https://github.com/christianraymond/waiter_webapp inside your project folder.
+```git clone https://github.com/christianraymond/waiter_webapp``` inside your project folder.
 
 # Author
 - Christian Ngubana -initiative work -[Christian Raymond](https://github.com/christianraymond?tab=repositories)
