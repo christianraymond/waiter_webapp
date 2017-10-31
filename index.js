@@ -47,6 +47,13 @@ app.get('/about', function(req, res){
   res.render('about')
 })
 
+app.get('/login', function(req, res){
+  res.render('login')
+})
+
+ app.get('/login/:username', waiterRoute.showWaiter);
+ app.post('/login/:username', waiterRoute.days);
+
  app.get('/waiters/:username', waiterRoute.showWaiter);
  app.post('/waiters/:username', waiterRoute.days);
  app.get('/admin', waiterRoute.admin);
